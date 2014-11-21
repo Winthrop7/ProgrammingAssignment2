@@ -1,8 +1,8 @@
-## Put comments here that give an overall description of what your
-## functions do
+## 
+## 
 
 ## Write a short comment describing this function
-## trial comment
+## 
 
 
 makeCacheMatrix <- function(x = matrix()) {
@@ -22,7 +22,7 @@ makeCacheMatrix <- function(x = matrix()) {
 
 
 
-## Write a short comment describing this function
+## 
 
 cacheSolve <- function(x, ...) {
         
