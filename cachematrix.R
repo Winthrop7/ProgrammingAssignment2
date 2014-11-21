@@ -19,15 +19,15 @@ cacheSolve <- function(x, ...) {
   if (!is.null(inv)) {
     message("getting cached data")
     return(inv)
-}
-# Calculate, using solve(), the matrix inverse, if the inverse has not yet been calculated.
-data <- x$get()
-inv <- solve(data, ...)
+  }
+  # Calculate, using solve(), the matrix inverse, if the inverse has not yet been calculated.
+  data <- x$get()
+  inv <- solve(data, ...)
 
-# Now cache the newly created inverse
-x$setinv(inv)
+  # Now cache the newly created inverse
+  x$setinv(inv)
 
-# Now return the newly cached value
-inv
+  # Now return the newly cached value
+  inv
 }
 
