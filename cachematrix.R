@@ -43,7 +43,10 @@ makeCacheMatrix <- function(x = matrix()) {
 
 ## Comments on the second function:
 
-##
+##cacheSolve does the work of retrieving the desired inverse matrix, if it exists in the
+##object "upstairs" created by makeCacheMatrix, or, if not, solving for the inverse,cacheing
+## it and returning it to the user. cacheSolve takes as its argument the list created
+##by the first function.
 
 
 
@@ -67,3 +70,32 @@ cacheSolve <- function(x, ...) {
   inv
 }
 
+## Here are some examples of the exploits of this suite, as well as a brief look at the 
+## internals of the objects returned by each.
+##
+## First, creat a matrix to pass to makeCacheMatrix:
+## > TestMatrix <- matrix(c(7,9,11,47,1,9,5,4,2),nrow=3,ncol=3)
+## Hand it over to makeCacheMatrix and assign the result:
+## > TestMatrixList <- makeCacheMatrix(TestMatrix)
+## Check to see if the original matrix an element of this list. 
+## > TestMatrixList$get()
+##       [,1] [,2] [,3]
+##[1,]    7   47    5
+##[2,]    9    1    4
+##[3,]   11    9    2
+## Running cacheSolve now will create it's inverse and store it.
+## > cacheSolve(TestMatrixList)
+##         [,1]        [,2]        [,3]
+##[1,] -0.02548726 -0.03673163  0.13718141
+##[2,]  0.01949025 -0.03073463  0.01274363
+##[3,]  0.05247376  0.34032984 -0.31184408
+##
+## Running cacheSolve again will retrieve it from the cache, rather
+## than recalculating:
+##
+## > cacheSolve(TestMatrixList)
+##getting cached data
+##        [,1]        [,2]        [,3]
+##[1,] -0.02548726 -0.03673163  0.13718141
+##[2,]  0.01949025 -0.03073463  0.01274363
+##[3,]  0.05247376  0.34032984 -0.31184408
