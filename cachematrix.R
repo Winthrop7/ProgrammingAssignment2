@@ -1,9 +1,14 @@
 ## 
-## 
+##
 
-## Write a short comment describing this function
-## 
-
+## makeCacheMatrix takes an invertible matrix as it's argument and performs two 
+## important tasks. It creates an object in an environment "outside" that of
+## environment of the function that will hold or "cache" the results of applying
+## the solve function to the matrix. makeCacheMatrix does not employ the solve
+## function itself, (that's the job of the other function in the suite), but, for
+## it's second task, returns a list whose elements are the original matirx and functions
+## that will allow for the transport of data to and from the "outside" environment.
+##
 
 makeCacheMatrix <- function(x = matrix()) {
   
