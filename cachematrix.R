@@ -79,7 +79,7 @@ cacheSolve <- function(x, ...) {
 ##
 ## > TestMatrixList <- makeCacheMatrix(TestMatrix)
 ##
-## Check to see if the original matrix an element of this list. 
+## Check to see if the original matrix is an element of this list. 
 ##
 ## > TestMatrixList$get()
 ##        [,1] [,2] [,3]
