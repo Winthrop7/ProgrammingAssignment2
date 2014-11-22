@@ -1,5 +1,21 @@
-## 
-##
+## cachematrix is a suite of two functions that work together to store and retrieve
+## the inverse of a matrix of interest. The inverse matrix data, once calculated, is
+## stored in an object placed in an environment other than the environment in which 
+## the functions operate. This allows for a stable maintenance of the data, so that
+## the inverse of the matrix need not be recalculated once it exists.
+
+## The two functions are makeCacheMatrix  and cacheSolve.
+
+## Acknowledgements:
+
+## My understanding of the processes necessary to this suite was enhanced by
+## two sources:
+## 1) John Chamber's remarks on "environments" in Chapter 5 of "Software for Data 
+##    Analysis, Programming with R"
+## 2) Norman Matloff's comments on using the superassignment operator in section 7.8 
+##    of "The Art of R Programming". The section is titled 'Writing Upstairs'!
+
+## Comments on the first function:
 
 ## makeCacheMatrix takes an invertible matrix as it's argument and performs two 
 ## important tasks. It creates an object in an environment "outside" that of
@@ -25,9 +41,11 @@ makeCacheMatrix <- function(x = matrix()) {
 }
 
 
+## Comments on the second function:
+
+##
 
 
-## 
 
 cacheSolve <- function(x, ...) {
         
