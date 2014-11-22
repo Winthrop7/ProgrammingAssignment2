@@ -73,7 +73,7 @@ cacheSolve <- function(x, ...) {
 ## Here are some examples of the exploits of this suite, as well as a brief look at the 
 ## internals of the objects returned by each.
 ##
-## First, creat a matrix to pass to makeCacheMatrix:
+## First, create a matrix to pass to makeCacheMatrix:
 ## > TestMatrix <- matrix(c(7,9,11,47,1,9,5,4,2),nrow=3,ncol=3)
 ## Hand it over to makeCacheMatrix and assign the result:
 ## > TestMatrixList <- makeCacheMatrix(TestMatrix)
